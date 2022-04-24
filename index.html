@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Inicio</a></li>
+            <li><a href="#">Acerca</a></li>
+            <li><a href="#">Trabajo</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="img/stars.png" id="stars" alt="">
+        <img src="img/moon.png" id="moon" alt="">
+        <img src="img/mountains_behind.png" id="m_b" alt="">
+        <h2 id="text">Luz de Luna</h2>
+        <a href="#" id="btn">Explore</a>
+        <img src="img/mountains_front.png" id="m_f" alt="">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nulla doloremque beatae repudiandae excepturi possimus assumenda et labore obcaecati perspiciatis at omnis facilis rerum, a quaerat. Consectetur tempora odit quod! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque pariatur, fugit laboriosam distinctio inventore tenetur aspernatur numquam amet perspiciatis autem accusamus minima voluptate maiores laborum obcaecati sequi, quo repudiandae veritatis. <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam modi officia pariatur nesciunt, aut eveniet repudiandae ipsa voluptatem rerum aperiam ad sunt cupiditate quidem earum asperiores temporibus fugiat dicta? Tempore.lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero facere, pariatur omnis laboriosam molestias itaque saepe architecto cum mollitia quia nisi iusto nemo ab cupiditate commodi temporibus? Vitae, ipsa exercitationem! <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Et nostrum tempore incidunt voluptatum, delectus quaerat? Earum, voluptatum facilis aspernatur enim aperiam nam ipsum beatae. Odio eaque cupiditate ab quaerat perferendis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque delectus voluptatibus placeat quam iusto a, animi nihil! Rem non minus necessitatibus ipsum corporis? Aliquam fuga adipisci recusandae pariatur, soluta laudantium!</p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let m_b = document.getElementById('m_b');
+        let m_f = document.getElementById('m_f');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            m_b.style.top = value * 0.5 + 'px';
+            m_f.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
